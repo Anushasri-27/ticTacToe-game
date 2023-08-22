@@ -1,7 +1,7 @@
-const Square = ({value})=>{
+const Square = ({value,onClick})=>{
  
     return(
-        <button type="submit" className="square ">
+        <button type="submit" className="square " onClick={onClick}>
             
             {value}
         
