@@ -20,7 +20,7 @@ const statusMessage= winner? `winner is ${winner}` :` next player is ${nextPlaye
 
 const handleSquareClick = clickedPosition => {
       //to prevent chnaging of value once the square is filled
-      if(square[clickedPosition]){
+      if(square[clickedPosition]  || winner ){
           return;
       }
       //set value in sq as per logic
