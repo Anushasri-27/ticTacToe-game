@@ -1,7 +1,9 @@
 import Board from './components/Board';
 import { useState } from 'react';
-import './style.scss';
 import { calculateWinner } from './winner';
+import StatusMessage from './components/StatusMessage';
+import './style.scss';
+
 
 function App() {
 
@@ -11,12 +13,7 @@ const [square,setSquare]=useState(Array(9).fill(null))   ;
 const [isXNext,setIsXNext] = useState(false);
 
 const winner=calculateWinner(square);
-//state of player to display msg
-const nextPlayer= isXNext? 'x' :'0';
 
-//status message
-
-const statusMessage= winner? `winner is ${winner}` :` next player is ${nextPlayer}`;
 
 const handleSquareClick = clickedPosition => {
       //to prevent chnaging of value once the square is filled
@@ -40,8 +37,8 @@ const handleSquareClick = clickedPosition => {
   return (
     <div className="app">
         <div>
-              <h2 className='status-message'> {statusMessage} </h2>
              
+             <StatusMessage winner={winner} isXNext={isXNext}  square={square}/> 
              <Board square={square} handleSquareClick={handleSquareClick }/>
              
         </div>
