@@ -5,6 +5,7 @@ import StatusMessage from './components/StatusMessage';
 import './style.scss';
 
 
+
 function App() {
 
   
@@ -37,8 +38,10 @@ const handleSquareClick = clickedPosition => {
   return (
     <div className="app">
         <div>
-             
-             <StatusMessage winner={winner} isXNext={isXNext}  square={square}/> 
+             <div className='container-message'>
+                    <StatusMessage winner={winner} isXNext={isXNext}  square={square}/> 
+             </div>
+            
              <Board square={square} handleSquareClick={handleSquareClick }/>
              
         </div>

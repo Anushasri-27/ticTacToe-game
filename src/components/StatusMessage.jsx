@@ -10,7 +10,7 @@ const StatusMessage =({winner , isXNext ,square}) =>{
          if(winner){
           return (
                   <React.Fragment> 
-                      winner is { ' '}
+                      Winner Is { ' '}
                       <span className={winner ==='x' ? 'text-green' :' text-orange'}>
                         {winner}
                       </span>
@@ -21,7 +21,7 @@ const StatusMessage =({winner , isXNext ,square}) =>{
             return ( 
                <>  
                <span className="text-orange">0</span> and  { ' '}
-               <span className="text-green">x</span> tied
+               <span className="text-green">X</span> tied
                </>
          
             )
@@ -30,7 +30,7 @@ const StatusMessage =({winner , isXNext ,square}) =>{
          if(!winner && !noMovesLeft){
              return (  
               <> 
-                  next player is{' '} 
+                  Next Player Is{' '} 
                  <span className={isXNext ? 'text-green' : 'text-orange'}>
                   { nextPlayer}
                  </span>

@@ -1,10 +1,15 @@
+/*  @import url('https://fonts.googleapis.com/css?family=Sofia&effect=fire'); */
+
 $green: #12e177;
 $orange: #ffc72a;
 $blue: #AFD3E2;
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: $blue;
+  background-image: url('./bg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #fff;
   padding-top: 2%;
   margin: 0;
@@ -12,7 +17,8 @@ body {
 }
 
 button {
-  background: $blue;
+  /*background-image: url('./bg.jpg'); */
+  background-color: #ffffff00;
   border: none;
   outline: none;
   &:hover {
@@ -70,11 +76,21 @@ button {
 
 .status-message {
 	margin-bottom: 36px;
-  font-size: 1.2rem;
+ /* font-family: "Sofia", sans-serif; */
+  color: black;
+  font-size: 2.2rem;
   font-weight: bolder;
+  &::first-letter{
+    color: rgb(224, 227, 4);
+  }
 	span {
 	  font-weight: normal;
 	}
+}
+
+.container-message{
+   
+
 }
 
 .btn-reset {
@@ -96,18 +112,38 @@ button {
   .board-row {
     display: flex;
     flex-direction: row;
-    border-bottom: 5px solid #0b7b34a4;
+    border-bottom: 5px solid #116A7B;
+  
     &:last-child {
       border-bottom: none;
     }
     .square {
       width: 100px;
       height: 100px;
-      border-right: 5px solid #094853a5;
+      border-right: 5px solid #116A7B;
       font-size: 2.5rem;
       padding: 0;
       overflow: hidden;
       transition: all 0.2s;
+      &:hover{
+        transition: border 0.5s ease;
+        /* Add the pulsing animation to the border */
+        animation: border-pulse 2s ease-in-out infinite;
+        @keyframes border-pulse {
+          0% {
+             
+             border-color: rgb(213, 227, 14);
+          }
+          50% {
+              
+              border-color: rgb(227, 131, 14);
+          }
+          100% {
+            
+              border-color: rgb(227, 14, 14);
+          }
+       }
+      }
       &:last-child {
         border-right: none;
       }
